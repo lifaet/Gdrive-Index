@@ -16,11 +16,11 @@ const video_domains_for_dl = ['']; // add multiple cloudflare addresses to balan
 const video_domain_for_dl = video_domains_for_dl[Math.floor(Math.random() * video_domains_for_dl.length)]; // DO NOT TOUCH THIS
 export const blocked_region = ['']; // add regional codes seperated by comma, eg. ['IN', 'US', 'PK']
 export const blocked_asn = []; // add ASN numbers from http://www.bgplookingglass.com/list-of-autonomous-system-numbers, eg. [16509, 12345]
-export const authConfig = {
+const authConfig = {
     "siteName": "ZIM", // Website name
-    "client_id": "abcdef", // Client id from Google Cloud Console
-    "client_secret": "abc", // Client Secret from Google Cloud Console
-    "refresh_token": "xyz", // Authorize token
+    "client_id": env.CLIENT_ID,
+    "client_secret": env.CLIENT_SECRET,
+    "refresh_token": env.REFRESH_TOKEN,
     "service_account": false, // true if you're using Service Account instead of user account
     "service_account_json": randomserviceaccount, // don't touch this one
     "files_list_page_size": 50,
@@ -35,31 +35,31 @@ export const authConfig = {
             "id": "1Hm1WM2qVgTXArfA5Lbgaf8HIjEEOD_89",
             "name": "Personal Documents",
             "protect_file_link": false,
-            "auth": { "user": "password", "user2": "password2" } /* Remove double slash before "auth" to activate id password protection */
-        },{
+            "auth": { "Zim": "Z1m01834@", "superadmin": "sUp3r@dM1n" } /* Remove double slash before "auth" to activate id password protection */
+        }, {
             "id": "1iKxeBPAh_2gvs9MJd830RvRPbwCSrtLc",
             "name": "Books & Sheets 🔓",
             "protect_file_link": false,
-        },{
+        }, {
             "id": "0AOWC3BqPtKeTUk9PVA",
             "name": "Temp Directory",
             "protect_file_link": false,
-            "auth": { "user": "password", "user2": "password2"} /* Remove double slash before "auth" to activate id password protection */
-        },{
+            "auth": { "moviesbayx": "moviesbayx", "superadmin": "sUp3r@dM1n" } /* Remove double slash before "auth" to activate id password protection */
+        }, {
             "id": "13rXLVBGyMUKqsNnjfbNhaQfYet39FF1P",
             "name": "Quick Share 🔓",
             "protect_file_link": false
-            //"auth": { "user": "password", "user2": "password2"} /* Remove double slash before "auth" to activate id password protection */
-        },{
+            //"auth": { "moviesbayx": "moviesbayx" } /* Remove double slash before "auth" to activate id password protection */
+        }, {
             "id": "17sHPHmFEz9ZhZh1kCgkuf5AQgeqRcXeF",
             "name": "DB",
             "protect_file_link": false,
-            "auth": { "user": "password", "user2": "password2" } /* Remove double slash before "auth" to activate id password protection */
-        },{
-            "id": "xyz",
-            "name": "xyz",
+            "auth": { "Zim": "Z1m01834@@", "superadmin": "sUp3r@dM1n" } /* Remove double slash before "auth" to activate id password protection */
+        }, {
+            "id": "1nW5QXMZIz1zv4t_5c2hNnge3K_Op7AVz",
+            "name": "AZAD",
             "protect_file_link": false,
-            // "auth": { "user": "password", "user2": "password2" } /* Remove double slash before "auth" to activate id password protection */
+            // "auth": { "Zim": "Z1m01834@@", "superadmin": "sUp3r@dM1n" } /* Remove double slash before "auth" to activate id password protection */
         }
     ]
 };
