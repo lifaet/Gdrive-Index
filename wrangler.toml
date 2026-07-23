@@ -1,0 +1,10 @@
+name = "gdrive-index"
+main = "src/index.js"
+compatibility_date = "2026-07-22"
+
+# Only needed if you set authConfig.enable_auth0_com = true in src/config.js.
+# Create the namespace first with: npx wrangler kv namespace create AUTH_STORE
+# then uncomment and fill in the id it prints out.
+# [[kv_namespaces]]
+# binding = "AUTH_STORE"
+# id = "<your-kv-namespace-id>"
