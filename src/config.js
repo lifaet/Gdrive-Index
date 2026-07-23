@@ -4,8 +4,16 @@
    Edit this file to change which Drive folders are indexed,
    site branding/theme, and feature toggles. Nothing else in
    this project should need editing for day-to-day changes.
+
+   CLIENT_ID, CLIENT_SECRET, and REFRESH_TOKEN below are NOT
+   defined in this file — they come from Cloudflare Secrets/
+   Variables on the Worker (Settings -> Variables and Secrets,
+   or `wrangler secret put CLIENT_ID` etc). This project uses
+   the old Service Worker syntax (addEventListener('fetch', ...)),
+   same as AUTH_STORE further down — so bindings show up as
+   bare global names, not through an `env` object.
    ============================================================ */
-//first
+
 export const serviceaccounts = [
     {}
 ];
@@ -16,7 +24,8 @@ const video_domains_for_dl = ['']; // add multiple cloudflare addresses to balan
 const video_domain_for_dl = video_domains_for_dl[Math.floor(Math.random() * video_domains_for_dl.length)]; // DO NOT TOUCH THIS
 export const blocked_region = ['']; // add regional codes seperated by comma, eg. ['IN', 'US', 'PK']
 export const blocked_asn = []; // add ASN numbers from http://www.bgplookingglass.com/list-of-autonomous-system-numbers, eg. [16509, 12345]
-const authConfig = {
+
+export const authConfig = {
     "siteName": "ZIM", // Website name
     "client_id": CLIENT_ID,
     "client_secret": CLIENT_SECRET,
@@ -75,12 +84,10 @@ export const auth0 = {
 export const uiConfig = {
     "theme": "darkly", // switch between themes, default set to slate, select from https://gitlab.com/ParveenBhadooOfficial/Google-Drive-Index
     "version": "2.1.8", // don't touch this one. get latest code using generator at https://bdi-generator.hashhackers.com
-    // If you're using Image then set to true, If you want text then set it to false
     "logo_image": true, // true if you're using image link in next option.
     "logo_height": "15px", // only if logo_image is true
     "logo_width": "25px", // only if logo_image is true
     "favicon": "https://lifaet.github.io/images/favicon.ico",
-    // if logo is true then link otherwise just text for name
     "logo_link_name": "https://lifaet.github.io/assets/images/favicon.ico",
     "fixed_header": false, // If you want the footer to be flexible or fixed.
     "header_padding": "20", // Value 80 for fixed header, Value 20 for flexible header. Required to be changed accordingly in some themes.
