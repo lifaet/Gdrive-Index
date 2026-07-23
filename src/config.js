@@ -18,9 +18,9 @@ export const blocked_region = ['']; // add regional codes seperated by comma, eg
 export const blocked_asn = []; // add ASN numbers from http://www.bgplookingglass.com/list-of-autonomous-system-numbers, eg. [16509, 12345]
 const authConfig = {
     "siteName": "ZIM", // Website name
-    "client_id": env.CLIENT_ID,
-    "client_secret": env.CLIENT_SECRET,
-    "refresh_token": env.REFRESH_TOKEN,
+    "client_id": CLIENT_ID,
+    "client_secret": CLIENT_SECRET,
+    "refresh_token": REFRESH_TOKEN,
     "service_account": false, // true if you're using Service Account instead of user account
     "service_account_json": randomserviceaccount, // don't touch this one
     "files_list_page_size": 50,
