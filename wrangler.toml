@@ -1,4 +1,4 @@
-name = "gdrive-index"
+name = "cdn"
 main = "src/index.js"
 compatibility_date = "2026-07-22"
 
